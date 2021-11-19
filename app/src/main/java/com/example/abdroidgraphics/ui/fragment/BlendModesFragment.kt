@@ -117,7 +117,11 @@ class BlendModesFragment : BaseFragment(R.layout.fragment_blend_modes) {
                         binding.imageView.apply {
                             if (viewModel.imagePosition == ImagePosition.NONE) {
                                 when (firstBitmap) {
-                                    null -> firstBitmap = it
+                                    null -> {
+                                        firstBitmap = it
+                                        binding.right.visibility = View.VISIBLE
+                                        binding.left.visibility = View.VISIBLE
+                                    }
                                     else -> {
                                         binding.imageSwitcher.visibility = View.VISIBLE
                                         viewModel.imagePosition = ImagePosition.SECOND
