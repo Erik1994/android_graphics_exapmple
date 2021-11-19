@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/text_nav_graph"
+    app:startDestination="@id/drawTextFragment">
+
+    <fragment
+        android:id="@+id/drawTextFragment"
+        android:name="com.example.abdroidgraphics.ui.fragment.DrawTextFragment"
+        android:label="DrawTextFragment"
+        tools:layout="@layout/fragment_draw_text">
+        <argument
+            android:name="inputText"
+            app:nullable="true"
+            app:argType="string"/>
+        <action
+            android:id="@+id/action_drawTextFragment_to_addTextFragment"
+            app:destination="@id/addTextFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addTextFragment"
+        android:name="com.example.abdroidgraphics.ui.fragment.AddTextFragment"
+        android:label="AddTextFragment" >
+        <argument
+            android:name="inputText"
+            app:nullable="true"
+            app:argType="string"/>
+        <action
+            android:id="@+id/action_addTextFragment_to_drawTextFragment"
+            app:destination="@id/drawTextFragment"
+            app:popUpTo="@id/drawTextFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+</navigation>

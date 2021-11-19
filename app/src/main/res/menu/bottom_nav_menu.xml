@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/blend_nav_graph"
+        android:title="Blend Mods"/>
+
+
+    <item android:id="@+id/text_nav_graph"
+        android:title="Draw Text"/>
+
+
+    <item android:id="@+id/drawing_nav_graph"
+        android:title="Drawing"/>
+
+</menu>
