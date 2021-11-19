@@ -63,4 +63,8 @@ abstract class BaseViewModel : ViewModel() {
         }
         return Bitmap.createScaledBitmap(bitmap, width, height, true)
     }
+
+    fun setBitmapNull() {
+        _bitmapFlow.value = null
+    }
 }

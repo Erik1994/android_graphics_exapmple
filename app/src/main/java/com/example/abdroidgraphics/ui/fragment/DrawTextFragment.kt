@@ -7,6 +7,7 @@ import android.net.Uri
 import android.os.Bundle
 import android.provider.MediaStore
 import android.view.*
+import android.widget.SeekBar
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContract
 import androidx.fragment.app.viewModels
@@ -87,8 +88,23 @@ class DrawTextFragment : BaseFragment(R.layout.fragment_draw_text) {
     }
 
     private fun setClickListeners() {
-        binding.floatingActionButton.setOnClickListener {
-            getContract.launch(null)
+        binding.apply {
+            floatingActionButton.setOnClickListener {
+                getContract.launch(null)
+            }
+            seekBar.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
+                override fun onProgressChanged(
+                    seekBar: SeekBar?,
+                    progress: Int,
+                    fromUser: Boolean
+                ) {
+                    binding.imageView.setTextSize(progress.toFloat())
+                }
+
+                override fun onStartTrackingTouch(seekBar: SeekBar?) = Unit
+
+                override fun onStopTrackingTouch(seekBar: SeekBar?) = Unit
+            })
         }
     }
 

@@ -113,6 +113,7 @@ class BlendModesFragment : BaseFragment(R.layout.fragment_blend_modes) {
             viewModel.bitmapFlow.flowWithLifecycle(lifecycle, Lifecycle.State.STARTED)
                 .collectLatest { bitmap ->
                     bitmap?.let {
+                        viewModel.setBitmapNull()
                         binding.imageView.apply {
                             if (viewModel.imagePosition == ImagePosition.NONE) {
                                 when (firstBitmap) {
