@@ -15,5 +15,3 @@ y
 Iapp/src/main/java/com/example/abdroidgraphics/ui/fragment/BaseFragment.kt,1/8/1877232da02596d2d7db942fd1d5eb9657a27217
 |
 Lapp/src/main/java/com/example/abdroidgraphics/ui/fragment/AddTextFragment.kt,e/d/ed7d225b957bfa51646c66a192ffa1354ec13197
-ƒ
-Sapp/src/main/java/com/example/abdroidgraphics/ui/viewmodel/DrawFragmentViewModel.kt,c/5/c5f9a312ef74ee75bf858d556f33b7276e108e24
