@@ -8,6 +8,7 @@ import androidx.navigation.Navigation.findNavController
 import androidx.navigation.findNavController
 import androidx.navigation.ui.*
 import com.example.abdroidgraphics.databinding.ActivityMainBinding
+import com.example.abdroidgraphics.ui.custom.BrashView
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {

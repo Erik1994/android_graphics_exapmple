@@ -28,7 +28,7 @@ class DrawTextView @JvmOverloads constructor(
             invalidate()
         }
 
-    var bitmapBitmap: Bitmap? = null
+    var bitmap: Bitmap? = null
         set(value) {
             field = value?.apply {
                 paint.shader = BitmapShader(this, Shader.TileMode.REPEAT, Shader.TileMode.MIRROR)
@@ -44,11 +44,6 @@ class DrawTextView @JvmOverloads constructor(
 
     fun setFont(typeface: Typeface) {
         paint.typeface = typeface
-        invalidate()
-    }
-
-    fun setShader(bitmap: Bitmap) {
-        paint.shader = BitmapShader(bitmap, Shader.TileMode.REPEAT, Shader.TileMode.REPEAT)
         invalidate()
     }
 

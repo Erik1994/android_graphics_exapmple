@@ -9,6 +9,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import androidx.navigation.NavDirections
+import com.example.abdroidgraphics.constant.imageMaxSize
 import com.example.abdroidgraphics.navigation.NavigationCommand
 import com.example.abdroidgraphics.navigation.SingleLiveEvent
 import kotlinx.coroutines.Dispatchers
@@ -36,16 +37,16 @@ abstract class BaseViewModel : ViewModel() {
 
     fun createBitmapFromUri(uri: Uri, activity: Context) {
         viewModelScope.launch {
-            withContext(Dispatchers.IO) {
+            withContext(Dispatchers.Default) {
                 createBitmap(uri, activity)
             }
         }
     }
 
-    private suspend fun createBitmap(uri: Uri, activity: Context) {
+    private fun createBitmap(uri: Uri, activity: Context) {
         activity.contentResolver?.openInputStream(uri)?.let {
             val bitmap = BitmapFactory.decodeStream(it)
-            _bitmapFlow.value = getResizedBitmap(bitmap, 500)
+            _bitmapFlow.value = getResizedBitmap(bitmap, imageMaxSize)
             it.close()
         }
     }

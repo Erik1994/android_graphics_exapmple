@@ -5,14 +5,13 @@ import android.graphics.*
 import android.util.AttributeSet
 import android.view.View
 import androidx.core.graphics.withMatrix
+import com.example.abdroidgraphics.constant.bitmapCoordinate
 
 class BlendModeView @JvmOverloads constructor(
     context: Context,
     attr: AttributeSet? = null,
     defStyleArr: Int = 0
 ) : View(context, attr, defStyleArr) {
-    private val firstBitmapPosition = 500f
-    private val secondBitmapPosition = 500f
     var canvasMatrix: Matrix? = null
     private var rotationDegree = 0f
     private val firstBitmapPaint = Paint(Paint.FILTER_BITMAP_FLAG).apply {
@@ -38,16 +37,16 @@ class BlendModeView @JvmOverloads constructor(
         }
 
     private val firstBitmapRect = RectF(
-        firstBitmapPosition.unaryMinus(),
-        firstBitmapPosition.unaryMinus(),
-        firstBitmapPosition - 300,
-        firstBitmapPosition - 300
+        bitmapCoordinate.unaryMinus(),
+        bitmapCoordinate.unaryMinus(),
+        bitmapCoordinate - 300,
+        bitmapCoordinate - 300
     )
     private val secondBitmapRect = RectF(
-        secondBitmapPosition.unaryMinus() + 300,
-        secondBitmapPosition.unaryMinus() + 300,
-        secondBitmapPosition,
-        secondBitmapPosition
+        bitmapCoordinate.unaryMinus() + 300,
+        bitmapCoordinate.unaryMinus() + 300,
+        bitmapCoordinate,
+        bitmapCoordinate
     )
 
     fun setPorterDuffMode(mode: PorterDuff.Mode?) {

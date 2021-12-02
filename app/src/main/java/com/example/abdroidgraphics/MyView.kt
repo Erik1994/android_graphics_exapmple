@@ -8,7 +8,7 @@ import android.util.AttributeSet
 import android.view.MotionEvent
 import android.view.View
 
-class MyView @JvmOverloads constructor(
+class xMyView @JvmOverloads constructor(
     context: Context,
     attr: AttributeSet? = null,
     defStyleArr: Int = 0

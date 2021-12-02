@@ -17,8 +17,7 @@ import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.navArgs
 import com.example.abdroidgraphics.R
 import com.example.abdroidgraphics.databinding.FragmentDrawTextBinding
-import com.example.abdroidgraphics.ui.viewmodel.DrawFragmentViewModel
-import kotlinx.coroutines.flow.collect
+import com.example.abdroidgraphics.ui.viewmodel.DrawTextFragmentViewModel
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 import java.lang.reflect.InvocationTargetException
@@ -26,7 +25,7 @@ import java.lang.reflect.InvocationTargetException
 
 class DrawTextFragment : BaseFragment(R.layout.fragment_draw_text) {
     private lateinit var binding: FragmentDrawTextBinding
-    override val viewModel: DrawFragmentViewModel by viewModels()
+    override val viewModel: DrawTextFragmentViewModel by viewModels()
     private val args: DrawTextFragmentArgs by navArgs()
     private var inputText = ""
 
@@ -81,7 +80,7 @@ class DrawTextFragment : BaseFragment(R.layout.fragment_draw_text) {
             viewModel.bitmapFlow.flowWithLifecycle(lifecycle, Lifecycle.State.STARTED)
                 .collectLatest {
                     it?.let { bitmap ->
-                        binding.imageView.bitmapBitmap = bitmap
+                        binding.imageView.bitmap = bitmap
                     }
                 }
         }
